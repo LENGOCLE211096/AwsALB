@@ -38,10 +38,6 @@ namespace AwsALB
                 // Make the session cookie essential if you wish
                 options.Cookie.IsEssential = true;
             });
-            var pgrmData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-            Directory.CreateDirectory($"{pgrmData}\\myaspnetwebapp\\keys");
-            services.AddDataProtection()
-                .PersistKeysToFileSystem(new DirectoryInfo($"{pgrmData}\\myaspnetwebapp\\keys"));
 
         }
 
