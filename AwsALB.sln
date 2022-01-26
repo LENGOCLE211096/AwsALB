@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsALB", "AwsALB.csproj", "{AD57D5B7-59F6-426E-9A0A-9D52EF14B508}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD57D5B7-59F6-426E-9A0A-9D52EF14B508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD57D5B7-59F6-426E-9A0A-9D52EF14B508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD57D5B7-59F6-426E-9A0A-9D52EF14B508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD57D5B7-59F6-426E-9A0A-9D52EF14B508}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4776B681-B766-4948-A5C2-3698B69A5C2F}
+	EndGlobalSection
+EndGlobal
