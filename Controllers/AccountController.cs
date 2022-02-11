@@ -27,7 +27,9 @@ namespace AwsALB.Controllers
                 _logger.LogInformation("username " + username);
                 if (!string.IsNullOrEmpty(username))
                 {
+                    _logger.LogInformation("set session " + username);
                     HttpContext.Session.SetString("username", username);
+                    _logger.LogInformation("redirect after set session " + username);
                     return RedirectToAction("Index", "Home");
                 }
             }catch(Exception ex)
