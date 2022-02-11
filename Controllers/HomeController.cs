@@ -24,7 +24,7 @@ namespace AwsALB.Controllers
         {
             try
             {
-                HttpContext.Session.SetString("username", "Lê Ngọc Lễ");
+                //HttpContext.Session.SetString("username", "Lê Ngọc Lễ");
                 if (string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
                 {
                     _logger.LogInformation("username is null");
