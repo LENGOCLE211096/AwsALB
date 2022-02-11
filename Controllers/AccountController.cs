@@ -30,7 +30,7 @@ namespace AwsALB.Controllers
                     _logger.LogInformation("set session " + username);
                     HttpContext.Session.SetString("username", username);
                     _logger.LogInformation("redirect after set session " + username);
-                    return RedirectToAction("Index", "Home");
+                    return Redirect("/Home/Index");
                 }
             }catch(Exception ex)
             {
