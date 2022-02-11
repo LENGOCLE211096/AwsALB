@@ -41,6 +41,7 @@ namespace AwsALB.Controllers
 
         public IActionResult Privacy()
         {
+            ViewBag.username = HttpContext.Session.GetString("username");
             return View();
         }
 
