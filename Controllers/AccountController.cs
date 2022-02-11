@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,29 @@ namespace AwsALB.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly ILogger<AccountController> _logger;
+        public AccountController(ILogger<AccountController> logger)
+        {
+            _logger = logger;
+
+        }
         public IActionResult Index()
         {
             return View();
         }
         public IActionResult SignUp(string username)
         {
-            if (!string.IsNullOrEmpty(username))
+            try
             {
-                HttpContext.Session.SetString("username", username);
-                return RedirectToAction("Index", "Home");
+                _logger.LogInformation("username " + username);
+                if (!string.IsNullOrEmpty(username))
+                {
+                    HttpContext.Session.SetString("username", username);
+                    return RedirectToAction("Index", "Home");
+                }
+            }catch(Exception ex)
+            {
+                _logger.LogError("Account Exception " + ex.Message);
             }
             return RedirectToAction("Index", "Account"); 
         }

@@ -22,11 +22,19 @@ namespace AwsALB.Controllers
 
         public IActionResult Index()
         {
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
+            try
             {
-                return RedirectToAction("Index", "Account");
+                if (string.IsNullOrEmpty(HttpContext.Session.GetString("username")))
+                {
+                    _logger.LogInformation("username is null");
+                    return RedirectToAction("Index", "Account");
+                }
+                ViewBag.username = HttpContext.Session.GetString("username");
             }
-            ViewBag.username = HttpContext.Session.GetString("username");
+            catch(Exception ex)
+            {
+                _logger.LogError("Home Exception " + ex.Message);
+            }
             return View();
         }
 
