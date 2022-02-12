@@ -29,15 +29,7 @@ namespace AwsALB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSession(options =>
-            {
-                options.IdleTimeout = TimeSpan.FromMinutes(30);
-                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-                options.Cookie.SameSite = SameSiteMode.Strict;
-                options.Cookie.HttpOnly = true;
-                // Make the session cookie essential if you wish
-                options.Cookie.IsEssential = true;
-            });
+            services.AddSession();
 
         }
 
